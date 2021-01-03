@@ -22,7 +22,7 @@ def countingValleys(steps, path):
     altitude = 0 
     
     for i in path:
-        #Determining if what the current sub-path is: mountain or valley
+        #Determining what the current sub-path is: mountain or valley
         if i == 'U' and altitude == 0:
             nowClimbing = 'mountain'
         elif i == 'D' and altitude == 0:
