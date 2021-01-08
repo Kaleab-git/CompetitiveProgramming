@@ -12,4 +12,4 @@ with ThreadPoolExecutor() as thread_executor:
     # Await all results
     await_results = [thread_executor.submit(sleepSort, num=i) for i in A]
     for f in as_completed([future for future in await_results]):
-        print(f.result())
+        print(f.result(),' ', end='')
