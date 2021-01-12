@@ -22,36 +22,46 @@ class LinkedList:
         return -1
     def addAtTail(self, val):
         node = self.head
-        while node.next != None:
-            node = node.next
-        node.next = Node(val)
+        if self.get_size() == 0:
+            self.addAtHead(val)
+        else:
+            while node.next != None:
+                node = node.next
+            node.next = Node(val)
     def addAtIndex(self, index, val):
         if index == 0:
             self.addAtHead(val)
         elif index == self.get_size():
             self.addAtTail(val)
         elif index < self.get_size():
+            self.print_nodes()
             new_node = Node(val)
             node = self.head
             current_index = 0
             while current_index+1 < index:
                 node = node.next
                 current_index += 1
-            #print ('new_node',new_node.val, 'node', node.val, 'node.next', node.next.val)
             new_node.next = node.next
             node.next = new_node
     def deleteAtIndex(self, index):
         node = self.head
+        size = self.get_size()
         current_index = 0
-        if self.get_size == 1:
+        if size == 0 or size <= index:
+            return
+        elif size == 1 and index == 0:
             self.head = None
-        elif self.get_size != 0:
-            while current_index+1 < index:
-                print ('I deleted stuff')
-                node = node.next
-                current_index += 1
-            node.next = node.next.next 
-
+            return
+        while current_index+1 < index:
+            current_index += 1
+            node = node.next
+        if index == 0:
+            self.head = node.
+            return 
+        elif node.next.next == None:
+            node.next = None
+        else:
+            node.next = node.next.next
     def get_size(self):
         node = self.head
         size = 0
@@ -59,22 +69,9 @@ class LinkedList:
             size+=1
             node = node.next
         return size
-
     def print_nodes(self):
         node = self.head
         while node != None:
             print (node.val, ' ', end='')
             node = node.next        
         print ()
-l = LinkedList()
-l.addAtHead(1)
-l.addAtTail(3)
-l.print_nodes()
-l.addAtIndex(1,2)
-l.print_nodes()
-print ()
-print (l.get(1))
-l.deleteAtIndex(1)
-l.print_nodes()
-print ()
-print(l.get(1))
