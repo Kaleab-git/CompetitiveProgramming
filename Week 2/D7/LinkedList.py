@@ -7,6 +7,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
     def addAtHead(self, val):
+        #a far better approach would be head = Node(value, head) and thats it. No more line of code.
         new_head = Node(val)
         new_head.next = self.head
         self.head = new_head
@@ -29,12 +30,11 @@ class LinkedList:
                 node = node.next
             node.next = Node(val)
     def addAtIndex(self, index, val):
-        if index == 0:
+        if index == 0: #to get an O(1) if we're to add at head
             self.addAtHead(val)
-        elif index == self.get_size():
+        elif index == self.get_size():#to divide tasks between functions
             self.addAtTail(val)
         elif index < self.get_size():
-            self.print_nodes()
             new_node = Node(val)
             node = self.head
             current_index = 0
