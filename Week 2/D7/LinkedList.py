@@ -35,6 +35,7 @@ class LinkedList:
         elif index == self.get_size():#to divide tasks between functions
             self.addAtTail(val)
         elif index < self.get_size():
+
             new_node = Node(val)
             node = self.head
             current_index = 0
@@ -56,7 +57,7 @@ class LinkedList:
             current_index += 1
             node = node.next
         if index == 0:
-            self.head = node.
+            self.head = node
             return 
         elif node.next.next == None:
             node.next = None
