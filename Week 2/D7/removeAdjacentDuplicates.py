@@ -9,6 +9,25 @@ class Solution(object):
 sol = Solution()
 
 print (sol.remove_duplicate('A'))
+#Last solution
+"""
+class Solution(object):
+    def removeDuplicates(self, S):
+        #NAD stands for non-duplicate adjacents
+        NADs = []
+        last_NAD_index = 0
+        for i in S:
+            if NADs != []:
+                if i == NADs[last_NAD_index-1]:
+                    NADs.pop()
+                    last_NAD_index -= 1
+                    continue 
+            NADs.append(i)
+            last_NAD_index += 1
+        return "".join(NADs)
+"""
+"Second Solution. Works, but takes too long."                   
+#My first solution
 '''
  def removeDuplicates(self, S):  
         for i in range(len(S)-1):
