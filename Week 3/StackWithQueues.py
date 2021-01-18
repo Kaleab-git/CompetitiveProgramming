@@ -36,8 +36,6 @@ class MyQueue(object):
 
 q = MyQueue()
 
-#q [1,2,3,4,5]
-
 q.push(1);q.push(2);q.push(3);q.push(4);q.push(5)
 print (q.empty())
 q.peek();q.peek();q.peek();q.peek();q.peek()

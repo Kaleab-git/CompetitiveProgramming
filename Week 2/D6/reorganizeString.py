@@ -1,3 +1,48 @@
+s = "aaaaaaabbbbccc"
+l = len(s)
+char_dict = {'a':6,'b':4,'c':3}
+ch = ['a','b','c']
+nl = 0
+ns = ""
+b = 0; nonb = 1
+
+while nl <= l:
+    while len(ch)!=0:
+        ns+=ch[b]
+        nl+=1
+        ns+=ch[nonb]
+        nl+=1
+        nonb+=1
+        print (ns)
+    b+=1
+    nonb=b+1
+
+print (ns)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def reorganizeString(S):
     L = len(S)
     s_list = []
