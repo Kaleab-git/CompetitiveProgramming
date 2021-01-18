@@ -5,19 +5,19 @@
 #         self.next = next
 class Solution(object):
     def nextLargerNodes(self, head):
-        i = head; j = head
+        i = head; j = i.next
         answer = []
+        next_greater_node = False
         while i != None:
-            local_max = i.val
             while j != None:
-                if j.val > local_max:
-                    local_max = j.val
+                if j.val > i.val:
+                    answer.append(j.val)
+                    next_greater_node = True
                     break
                 j = j.next
-            if local_max == i.val:
+            if next_greater_node != True:
                 answer.append(0)
-            else:
-                answer.append(local_max)
+            next_greater_node = False
             i = i.next
-            j = i        
+            j = i    
         return answer
