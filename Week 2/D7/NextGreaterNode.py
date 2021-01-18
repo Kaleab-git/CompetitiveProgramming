@@ -12,6 +12,7 @@ class Solution(object):
             while j != None:
                 if j.val > local_max:
                     local_max = j.val
+                    break
                 j = j.next
             if local_max == i.val:
                 answer.append(0)
@@ -19,4 +20,4 @@ class Solution(object):
                 answer.append(local_max)
             i = i.next
             j = i        
-        
+        return answer
