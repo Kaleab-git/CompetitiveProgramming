@@ -3,8 +3,7 @@ class MyQueue(object):
     def __init__(self):
         self.s1 = [] #storing stack
         self.s2 = [] #operation stack
-
-
+        
     def push(self, x):
         self.s1.append(x)
     
