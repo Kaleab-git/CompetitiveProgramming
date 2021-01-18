@@ -20,4 +20,4 @@ class Solution(object):
             next_greater_node = False
             i = i.next
             j = i    
-        return answer
+        return answer   
