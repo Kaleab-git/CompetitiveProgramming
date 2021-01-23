@@ -16,7 +16,3 @@ class Solution(object):
             else:
                 return self.searchBST(root.left, val)
             
-a = 2
-
-if a:
-    print ('hgi')
