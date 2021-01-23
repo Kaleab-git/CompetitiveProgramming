@@ -11,3 +11,9 @@ def height(root, lh=0,rh=0):
         return rh
 
 
+# has time complexity of O(n), maybe, n bieng hight of the tree
+# has O(n) worst case space complexity. O(log)
+#
+#
+#
+#
