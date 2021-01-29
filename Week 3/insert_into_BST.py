@@ -11,7 +11,7 @@ class Solution:
         if node:
             while inserted == False:
                 if node.val < val:   # we're concerned with right side in this case
-                    if node.right:
+                    if snode.right:
                         node = node.right
                     else:
                         node.right = TreeNode(val)
