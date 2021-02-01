@@ -12,4 +12,4 @@ class Solution:
         i = nums.index(root.val)
         root.left = self.constructMaximumBinaryTree(nums[:i])
         root.right = self.constructMaximumBinaryTree(nums[i+1:])
-        return root
+        return root 
