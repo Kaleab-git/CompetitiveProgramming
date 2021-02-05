@@ -1,28 +1,21 @@
-import heapq as heap
-
-class Solution(object):
-    def topKFrequent(self, nums, k):
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        if len(nums) == k:
+            return nums
         countDict = {}
-        myHeap = []
         for num in nums:
             if num in countDict:
                 countDict[num] += 1
             else:
-                countDict[num] = 0
-                
-        for i in countDict:
-            heap.heappush(myHeap, -countDict[i])
-        
+                countDict[num] = 1
+        print (countDict)
+        countDict = dict(sorted(countDict.items(),reverse=True, key = lambda x: x[1]))
         answer = []
-        frequencyList = countDict.values()
-        numList = countDict.keys()
-        
-        for i in range(1,k):
-            answer.append(numList[frequencyList.index(i)])
-
+        i=0
+        for num in countDict:
+            print (i, k)
+            if i == k:
+                return answer
+            answer.append(num)
+            i += 1
         return answer
-
-        
-solution  = Solution()
-
-print (solution.topKFrequent([1,1,1,2,2,3], 2))
