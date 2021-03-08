@@ -6,8 +6,6 @@ def reverse(x):
     signed = False
     if x == 0:
         return 0
-    if x > (2**31 - 1) or x < (0-2**31):
-        return 0
     if '-' in string:
         string = string[1:]
         signed = True
