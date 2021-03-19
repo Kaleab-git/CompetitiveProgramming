@@ -1,10 +1,9 @@
-    import heapq as heap
+import heapq as heap
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         answer = []
         count_dict = {count:[] for count in range(1, len(words)+1)}
         myHeap = []
-        words_set = set(words)
         d = {} 
         for i in words:
             d[i] = d.get(i, 0) + 1 
@@ -16,7 +15,6 @@ class Solution:
             heap.heappush(myHeap, -i)
         
         while len(answer) < k:
-
             Max = -heap.heappop(myHeap)
             if len(answer) + len(count_dict[Max]) <= k:
                 answer.extend(count_dict[Max])
