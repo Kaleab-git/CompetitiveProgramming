@@ -1,7 +1,7 @@
 class Solution:#one bfs is one city.
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         length = len(isConnected)
-        if len(isConnected) == 1: return 1
+        if length == 1: return 1
         stack = []
         visited = [False]*length
         city_count = 0
