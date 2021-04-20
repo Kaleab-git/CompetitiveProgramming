@@ -1,7 +1,7 @@
 class Solution:
     def minOperations(self, n: int) -> int:
-        if n%2==0: return sum(x for x in range(1,n,2))
-        return sum(x for x in range(2,n,2))
+        return sum(x for x in range(1,n,2)) if n%2==0 else sum(x for x in range(2,n,2)) 
+        
 """
 if n=odd, then we wanna bring all the numbers to middle one. 
 And its going to cost the middle element 0 to do that.
