@@ -2,9 +2,7 @@ from collections import deque
 class Solution:
     def largestValues(self, root: TreeNode) -> List[int]:
         if not root: return []
-        que = deque([(root, 0)])
-        ans = [(root,0)]
-        level = 0
+        que = deque([(root, 0)]); ans = [(root,0)]; level = 0
         while que:
             node, depth = que.popleft()
             if level!=depth:
